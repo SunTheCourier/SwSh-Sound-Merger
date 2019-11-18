@@ -18,7 +18,7 @@ namespace SwSh_Sound_Merger
         {
             if (args.Length < 1 && args.Length > 3)
             {
-                Console.WriteLine("Arguments: <Path to Sounds>, <Overwrite=false>, <Dictionary=CurrentDirecoty/Dictonary.txt>");
+                Console.WriteLine("Arguments: <Path to Sounds>, <Overwrite=false>, <Dictionary=CurrentDirectory/Dictonary.txt>");
                 Console.Write("Press any key to continue!");
                 Console.ReadKey(true);
                 return;
@@ -27,7 +27,7 @@ namespace SwSh_Sound_Merger
             if (args.Length == 3)
                 dictionary = new FileInfo(args[2]);
             else
-                dictionary = CurrentDirectory.GetFile("Dicitonary.txt");
+                dictionary = CurrentDirectory.GetFile("Dictionary.txt");
 
             if (!dictionary.Exists)
             {
