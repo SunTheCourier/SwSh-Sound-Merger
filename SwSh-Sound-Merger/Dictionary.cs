@@ -28,7 +28,7 @@ namespace SwSh_Sound_Merger
                 }
                 else if (line.Contains("//"))
                 {
-                   line = line.Remove(line.IndexOf("//"));
+                    line = line.Remove(line.IndexOf("//"));
                 }
                 else if (checkEndingComment)
                 {
@@ -68,5 +68,3 @@ namespace SwSh_Sound_Merger
         }
     }
 }
-
-
