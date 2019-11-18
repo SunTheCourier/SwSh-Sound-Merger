@@ -78,6 +78,7 @@ namespace SwSh_Sound_Merger
                 writer.Configuration.Endianness = Endianness.LittleEndian;
                 AudioData audio = null;
 
+                Console.WriteLine($"Processing {sound.Name}...");
                 if (sound.StartFileIndex != -1 && sound.LoopFileIndex == -1)
                 {
                     VorbisWaveReader vorbisStart = new VorbisWaveReader(gameSounds.GetFile(sound.StartFileName).FullName);
