@@ -1,26 +1,25 @@
 /*
 Stream.pck
 ========Legend=========
-& = Joint
-| = Simillar(?) or Same Sound
+& = joint
+| = simillar, same or unsorted
 ??? = Unknown
-* = Possibly Incorrect
+* = possibly incorrect
 
 First number will be the start stream file Second will be the loop typically unless specified otherwise.
 ======================
 */
 
-910 & 2935 = Toby's Theme
-836 | 2155 = Evolve theme (8-bit remix)
-1799 & 2442 = Wild PKM
-2369 & 2838 = Bede's Battle Theme
+910 & 2935 = Battle Tower Battle Theme
+836 | 2155 = Evolution Theme (8-bit remix)
+1799 & 2442 = Wild Pokemon Battle Theme
+2369 & 2838 = Bede Battle Theme
 1970 & 3202 = Team Yell Battle Theme
 2552* & 844 = Gym Theme
 839 & 1125 = Sonia's Theme
 2302 & ??? = Marine Battle Theme (Regular Ver.)
-2174 & ??? = Marine Battle Theme (Finale Ver.)
-//TODO: Compile gym battle parts into one folder and sort
-//2182 & 2053 & ((514 | 898) & (2133 | 2895)) & 282 &(1008 & 2690) & 2633 & 1675 = Gym Battle Theme (There are a lot of pieces of this tracks, and probably very wrong ordered)
+2174 & ??? = Marine Battle Theme (Finale Ver.
+2182 | 2053 | 514 | 898 | 2133 | 2895 | 282 | 1008 | 2690 | 2633 | 1675 = Gym //TODO: Needs sortings
 2398 & 1949 = Trainer Battle Theme
 675 & 1385 = Oleana Battle Theme
 736 & 1495 = Hop Battle Theme (Regular Ver.)

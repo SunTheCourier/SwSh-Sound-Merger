@@ -16,17 +16,19 @@ namespace SwSh_Sound_Merger
             for (int i = 0; i < lines.Length; i++)
             {
                 string line = lines[i];
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
 
                 if (line.StartsWith("/*"))
                 {
                     checkEndingComment = true;
                     continue;
                 }
-                else if (line.StartsWith("//"))
+                else if (line.Contains(" //"))
                 {
-                    continue;
+                    line = line.Remove(line.IndexOf(" //"));
+                }
+                else if (line.Contains("//"))
+                {
+                   line = line.Remove(line.IndexOf("//"));
                 }
                 else if (checkEndingComment)
                 {
@@ -35,7 +37,9 @@ namespace SwSh_Sound_Merger
                     continue;
                 }
 
-                //TODO; implement music with more than 2 tracks!
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+
                 line = line.Replace("*", "");
                 line = line.Replace("???", "-1");
 
