@@ -19,7 +19,7 @@ First number will be the start stream file Second will be the loop typically unl
 839 & 1125 = Sonia's Theme
 2302 & ??? = Marine Battle Theme (Regular Ver.)
 2174 & ??? = Marine Battle Theme (Finale Ver.)
-2182 | 2053 | 514 | 898 | 2133 | 2895 | 282 | 1008 | 2690 | 2633 | 1675 = Gym //TODO: Needs sorting
+2053 | 514 | 898 | 2133 | 2895 | 282 | 1008 | 2690 | 2633 | 1675 = Gym //TODO: Needs sorting
 2398 & 1949 = Trainer Battle Theme
 675 & 1385 = Oleana Battle Theme
 736 & 1495 = Hop Battle Theme (Regular Ver.)
