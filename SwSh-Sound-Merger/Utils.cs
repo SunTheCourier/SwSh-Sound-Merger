@@ -21,6 +21,15 @@ namespace SwSh_Sound_Merger
             {
                 string[] args = str.ToLowerInvariant().Split(':');
 
+                if (args.Length < 4)
+                {
+                    this.type = null;
+                    encoding = null;
+                    target = null;
+                    endianness = null;
+                    return;
+                }
+
                 this.type = !Enum.TryParse(args[0], true, out AudioType type) ? null : (AudioType?)type;
 
                 switch (args[1])

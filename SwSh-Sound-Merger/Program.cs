@@ -16,7 +16,7 @@ namespace SwSh_Sound_Merger
 
         static void Main(string[] args)
         {
-            if (args.Length < 1 && args.Length > 3)
+            if (args.Length < 1 || args.Length > 3)
             {
                 Console.WriteLine("Arguments: <Path to Sounds>, <Format=bfstm:16:le:ca>, <Overwrite=false>, <Dictionary=CurrentDirectory/Dictonary.txt>");
                 Console.WriteLine("Format Options: bfstm, bcstm : ima, 4, 8, 16:le (switch), be (wii u) : ca (wii u/switch), ct (3ds), re");
