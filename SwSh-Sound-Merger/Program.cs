@@ -115,13 +115,13 @@ namespace SwSh_Sound_Merger
 
                     audio.SetLoop(true, 0, totalSamples);
                 }
-                writer.WriteToStream(audio, outFile.Open(FileMode.Create));
-
-                Console.WriteLine("Succesfully merged and convertered all tracks!");
-                Console.Write("Press any key to continue!");
-                Console.ReadKey(true);
-                return;
+                if (audio != null)
+                    writer.WriteToStream(audio, outFile.Open(FileMode.Create));
             }
+            Console.WriteLine("Succesfully merged and convertered all tracks!");
+            Console.Write("Press any key to continue!");
+            Console.ReadKey(true);
+            return;
         }
     }
 }
