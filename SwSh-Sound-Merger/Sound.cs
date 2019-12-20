@@ -14,5 +14,9 @@
             StartFileIndex = startIndex;
             LoopFileIndex = loopIndex;
         }
+
+        public bool HasLoopFile => LoopFileIndex != -1;
+
+        public bool HasStartFile => StartFileIndex != -1; 
     }
 }

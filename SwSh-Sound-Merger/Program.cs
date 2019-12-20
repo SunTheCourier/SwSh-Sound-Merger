@@ -83,9 +83,8 @@ namespace SwSh_Sound_Merger
             CurrentDirectory.GetDirectory("out").Create();
             foreach (Sound sound in sounds.Sounds)
             {
-                if (sound.StartFileIndex == -1 && sound.LoopFileIndex == -1)
+                if (!sound.HasStartFile && !sound.HasStartFile)
                     continue;
-
 
                 FileInfo outFile = CurrentDirectory.GetDirectory("out").GetFile($"{sound.Name}.{specs.type.ToString().ToLower()}");
                 if (!Overwrite && outFile.Exists)
@@ -97,7 +96,7 @@ namespace SwSh_Sound_Merger
                 AudioData audio = null;
 
                 Console.WriteLine($"Processing {sound.Name}...");
-                if (sound.StartFileIndex != -1 && sound.LoopFileIndex == -1)
+                if (sound.HasStartFile && !sound.HasLoopFile)
                 {
                     using (VorbisWaveReader vorbisStart = new VorbisWaveReader(gameSounds.GetFile(sound.StartFileName).FullName))
                     {
@@ -109,7 +108,7 @@ namespace SwSh_Sound_Merger
                     }
 
                 }
-                else if (sound.StartFileIndex != -1 && sound.LoopFileIndex != -1)
+                else if (sound.HasStartFile && sound.HasLoopFile)
                 {
                     VorbisWaveReader vorbisStart = new VorbisWaveReader(gameSounds.GetFile(sound.StartFileName).FullName);
                     VorbisWaveReader vorbisLoop = new VorbisWaveReader(gameSounds.GetFile(sound.LoopFileName).FullName);
@@ -130,7 +129,7 @@ namespace SwSh_Sound_Merger
 
                     audio.SetLoop(true, startLoop, endLoop);
                 }
-                else if (sound.StartFileIndex == -1 && sound.LoopFileIndex != -1)
+                else if (!sound.HasStartFile && sound.HasLoopFile)
                 {
                     VorbisWaveReader vorbisLoop = new VorbisWaveReader(gameSounds.GetFile(sound.LoopFileName).FullName);
                     WaveFileWriter.CreateWaveFile(tempWave.FullName, vorbisLoop.ToWaveProvider16());
