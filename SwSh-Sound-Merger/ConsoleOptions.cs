@@ -26,7 +26,7 @@ namespace SwSh_Sound_Merger
         [Value(0, MetaName = "Game sound path", Required = true)]
         public string FolderPath { get; set; }
 
-        [Value(1, MetaName = "Dictionary file path", Required = false, Default = "Dictonary.txt")]
+        [Value(1, MetaName = "Dictionary file path", Required = false, Default = "Dictionary.txt")]
         public string DictionaryPath { get; set; }
     }
 }

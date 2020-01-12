@@ -72,8 +72,17 @@ namespace SwSh_Sound_Merger
                     {
                         VorbisWaveReader vorbisStart = new VorbisWaveReader(gameSounds.GetFile(sound.StartFileName).FullName);
                         VorbisWaveReader vorbisLoop = new VorbisWaveReader(gameSounds.GetFile(sound.LoopFileName).FullName);
-
-                        WaveFileWriter.CreateWaveFile(tempWave.FullName, vorbisStart.FollowedBy(vorbisLoop).ToWaveProvider16());
+                        if (vorbisStart.WaveFormat.SampleRate < vorbisLoop.WaveFormat.SampleRate)
+                        {
+                            MediaFoundationResampler sampeler = new MediaFoundationResampler(vorbisStart, vorbisLoop.WaveFormat.SampleRate);
+                            WaveFileWriter.CreateWaveFile(tempWave.FullName, sampeler.ToSampleProvider().FollowedBy(vorbisLoop).ToWaveProvider16());
+                        }
+                        else if (vorbisStart.WaveFormat.SampleRate > vorbisLoop.WaveFormat.SampleRate)
+                        {
+                            MediaFoundationResampler sampeler = new MediaFoundationResampler(vorbisLoop, vorbisStart.WaveFormat.SampleRate);
+                            WaveFileWriter.CreateWaveFile(tempWave.FullName, vorbisStart.FollowedBy(sampeler.ToSampleProvider()).ToWaveProvider16());
+                        }
+                        else WaveFileWriter.CreateWaveFile(tempWave.FullName, vorbisStart.FollowedBy(vorbisLoop).ToWaveProvider16());
                         VorbisReader dataStart = new VorbisReader(gameSounds.GetFile(sound.StartFileName).FullName);
                         VorbisReader dataLoop = new VorbisReader(gameSounds.GetFile(sound.LoopFileName).FullName);
                         int startLoop = (int)dataStart.TotalSamples;

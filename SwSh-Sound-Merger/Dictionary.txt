@@ -25,8 +25,7 @@ First number will be the start stream file Second will be the loop typically unl
 736 & 1495 = Hop Battle Theme (Regular Ver.)
 ??? & 2505 = Hop Battle Theme (Finale Ver.)
 2572 & 1228 = Piers Battle Theme
-//Sampling rate is inconsistent, TODO: resample songs in Merger(?)
-//1409 & 1383 = Turffield Theme 
+1409 & 1383 = Turffield Theme
 1006 & 123 = Chairman Rose Battle Theme
 1031 = Ending Credit Music
 957 & 900 = Storming Rose Tower Theme
