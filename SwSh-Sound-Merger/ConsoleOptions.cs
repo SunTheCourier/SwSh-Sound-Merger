@@ -17,16 +17,16 @@ namespace SwSh_Sound_Merger
         [Option('f', "format", Required = false, Default = AudioFormat.BFSTM, HelpText = "Format types: BCSTM and BFSTM")]
         public AudioFormat Format { get; set; }
 
-        [Option('e', "Endianness", Required = false, Default = Endianness.LittleEndian, HelpText = "Endianness to encode file in: LittleEndian and BigEndian")]
+        [Option('e', "endianness", Required = false, Default = Endianness.LittleEndian, HelpText = "Endianness to encode file in: LittleEndian and BigEndian")]
         public Endianness Endianness { get; set; }
 
-        [Option('o', "Overwrite", Required = false, Default = false, HelpText = "Overwrite sound files in output folder")]
+        [Option('o', "overwrite", Required = false, Default = false, HelpText = "Overwrite sound files in output folder")]
         public bool Overwrite { get; set; }
+
+        [Option('d', "dictionary", Required = false, Default = "Dictionary.txt", HelpText = "Dictionary path")]
+        public string DictionaryPath { get; set; }
 
         [Value(0, MetaName = "Game sound path", Required = true)]
         public string FolderPath { get; set; }
-
-        [Value(1, MetaName = "Dictionary file path", Required = false, Default = "Dictionary.txt")]
-        public string DictionaryPath { get; set; }
     }
 }
