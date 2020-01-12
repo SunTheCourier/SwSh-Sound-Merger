@@ -17,16 +17,32 @@ First number will be the start stream file Second will be the loop typically unl
 1970 & 3202 = Team Yell Battle Theme
 2552* & 844 = Gym Mission Theme
 839 & 1125 = Sonia's Theme
-2302 & ??? = Marine Battle Theme (Regular Ver.)
+2302 & 2281 = Marine Battle Theme (Regular Ver.)
 2174 & 3100 = Marine Battle Theme (Finale Ver.)
 3182 | 2053 | 514 | 898 | 2133 | 2895 | 282 | 1008 | 2690 | 2633 | 1675 = Gym //3182 -> 2053 -> ??? -> 282 TODO: sort more
 2398 & 1949 = Trainer Battle Theme
 675 & 1385 = Oleana Battle Theme
 736 & 1495 = Hop Battle Theme (Regular Ver.)
+//2389 Fits somewhere into this
 ??? & 2505 = Hop Battle Theme (Finale Ver.)
 2572 & 1228 = Piers Battle Theme
 1409 & 1383 = Turffield Theme
 1006 & 123 = Chairman Rose Battle Theme
 1031 = Ending Credit Music
+//1290 Fits somewhere here???
 957 & 900 = Storming Rose Tower Theme
 2994 & ??? = Team Yell Encounter
+2156 & 1567 = Champion Battl Theme
+2326 & 3277 = Eternatus Battle (Phase 3)
+/3350???
+??? & 2696 = Zacian and Zamazenta Battle Theme
+1776 = PokeJobs Theme
+??? & 3187 = Title Theme
+//346???
+803 = Galar Mines
+3254 & 1356 = Marine Encounter
+??? & 1188 = Pokemon Center Theme
+635 & 746 = Salon Theme
+??? & 529 = Bede Encounter
+248 & 3332 = Zacian and Zamazenta first Encounter Battle Theme
+582 = Badge Get!
