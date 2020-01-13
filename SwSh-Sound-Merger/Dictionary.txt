@@ -32,7 +32,7 @@ First number will be the start stream file Second will be the loop typically unl
 //1290 Fits somewhere here???
 957 & 900 = Storming Rose Tower Theme
 2994 & ??? = Team Yell Encounter
-2156 & 1567 = Champion Battl Theme
+2156 & 1567 = Champion Battle Theme
 2326 & 3277 = Eternatus Battle Phase 3
 //3350???
 ??? & 2696 = Zacian and Zamazenta Battle Theme

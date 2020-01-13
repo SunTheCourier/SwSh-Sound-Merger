@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace SwSh_Sound_Merger
 {
-    class Dictionary
+    class SoundDictionary
     {
         public List<Sound> Sounds { get; }
-        public Dictionary(FileInfo fileName)
+        public SoundDictionary(FileInfo fileName)
         {
             Sounds = new List<Sound>();
             bool checkEndingComment = false;
