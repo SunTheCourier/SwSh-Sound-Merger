@@ -63,7 +63,9 @@ namespace SwSh_Sound_Merger
                     {
                         if (Threads[i] == null || Threads[i].ThreadState == ThreadState.Stopped)
                         {
-                            Sound sound = sounds.Sounds.First();
+                            Sound sound = sounds.Sounds.FirstOrDefault();
+                            if (sound == null)
+                                break;
                             sounds.Sounds.Remove(sound);
                             Threads[i] = new Thread(() => ConvertSound(sound));
                             Threads[i].Start();
