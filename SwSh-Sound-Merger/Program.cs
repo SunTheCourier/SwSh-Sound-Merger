@@ -63,7 +63,9 @@ namespace SwSh_Sound_Merger
                     {
                         if (Threads[i] == null || Threads[i].ThreadState == ThreadState.Stopped)
                         {
-                            Sound sound = sounds.Sounds.First();
+                            Sound sound = sounds.Sounds.FirstOrDefault();
+                            if (sound == null)
+                                break;
                             sounds.Sounds.Remove(sound);
                             Threads[i] = new Thread(() => ConvertSound(sound));
                             Threads[i].Start();
@@ -73,6 +75,7 @@ namespace SwSh_Sound_Merger
                     if (Threads.All(x => x.ThreadState == ThreadState.Stopped) && sounds.Sounds.Count == 0)
                         break;
                 }
+
                 Console.WriteLine($"Coversion took {(startTime - DateTime.Now).ToString("mm':'ss")} minutes");
                 Console.WriteLine("Succesfully merged and convertered all tracks!");
                 Console.Write("Press any key to continue!");
