@@ -26,7 +26,7 @@ namespace SwSh_Sound_Merger
         [Option('d', "dictionary", Required = false, Default = "Dictionary.txt", HelpText = "Dictionary path")]
         public string DictionaryPath { get; set; }
 
-        [Option('j', "threads", Required = false, Default = -1, HelpText = "Defaults to amount of logical processor on PC")]
+        [Option('j', "threads", Required = false, Default = -1, HelpText = "Defaults to half the amount of logical processor on the PC")]
         public int ThreadCount { get; set; }
 
         [Value(0, MetaName = "Game sound path", Required = true)]

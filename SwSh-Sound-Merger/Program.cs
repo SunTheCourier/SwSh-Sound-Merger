@@ -1,11 +1,11 @@
-﻿using CommandLine;
+using CommandLine;
 using NAudio.Vorbis;
 using NAudio.Wave;
 using NVorbis;
 using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading;
+using System.Threading.Tasks;
 using VGAudio.Containers.NintendoWare;
 using VGAudio.Containers.Wave;
 using VGAudio.Formats;
@@ -15,7 +15,6 @@ namespace SwSh_Sound_Merger
     class Program
     {
         private static readonly DirectoryInfo CurrentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
-        private static Thread[] Threads;
 
         private static ConsoleOptions Arguments;
         private static DirectoryInfo GameSounds;
@@ -26,11 +25,6 @@ namespace SwSh_Sound_Merger
             Parser.Default.ParseArguments<ConsoleOptions>(args)
             .WithParsed(arguments =>
             {
-                if (arguments.ThreadCount == -1)
-                    Threads = new Thread[Environment.ProcessorCount];
-                else
-                    Threads = new Thread[arguments.ThreadCount];
-
                 FileInfo dictionary = new FileInfo(arguments.DictionaryPath);
 
                 if (!dictionary.Exists)
@@ -57,24 +51,15 @@ namespace SwSh_Sound_Merger
                 Arguments = arguments;
                 GameSounds = gameSounds;
 
-                while (true)
+                List<Task> tasks = new List<Task>();
+                LimitedConcurrencyLevelTaskScheduler scheduler = new LimitedConcurrencyLevelTaskScheduler(arguments.ThreadCount);
+                TaskFactory factory = new TaskFactory(scheduler);
+                foreach (Sound sound in sounds.Sounds)
                 {
-                    for (int i = 0; i < Threads.Length; i++)
-                    {
-                        if (Threads[i] == null || Threads[i].ThreadState == ThreadState.Stopped)
-                        {
-                            Sound sound = sounds.Sounds.FirstOrDefault();
-                            if (sound == null)
-                                break;
-                            sounds.Sounds.Remove(sound);
-                            Threads[i] = new Thread(() => ConvertSound(sound));
-                            Threads[i].Start();
-                        }
-                    }
-
-                    if (Threads.All(x => x.ThreadState == ThreadState.Stopped) && sounds.Sounds.Count == 0)
-                        break;
+                    Task t = factory.StartNew(() => ConvertSound(sound));
+                    tasks.Add(t);
                 }
+                Task.WaitAll(tasks.ToArray());
 
                 Console.WriteLine($"Coversion took {(startTime - DateTime.Now).ToString("mm':'ss")} minutes");
                 Console.WriteLine("Succesfully merged and convertered all tracks!");
@@ -84,7 +69,7 @@ namespace SwSh_Sound_Merger
             });
         }
 
-        static void ConvertSound(Sound sound)
+        private static void ConvertSound(Sound sound)
         {
             if (!sound.HasStartFile && !sound.HasStartFile)
                 return;
@@ -109,7 +94,6 @@ namespace SwSh_Sound_Merger
                 {
                     audio = reader.Read(stream);
                 }
-
             }
             else if (sound.HasStartFile && sound.HasLoopFile)
             {
