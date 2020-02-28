@@ -15,7 +15,8 @@ First number will be the start stream file Second will be the loop typically unl
 1799 & 2442 = Wild Pokemon Battle Theme
 2369 & 2838 = Bede Battle Theme
 1970 & 3202 = Team Yell Battle Theme
-2552* & 844 = Gym Mission Theme
+2552 = Gym Intro
+844 = Gym Mission Theme
 839 & 1125 = Sonia's Theme
 2302 & 2281 = Marine Battle Theme (Regular Ver.)
 2174 & 3100 = Marine Battle Theme (Finale Ver.)
@@ -46,3 +47,12 @@ First number will be the start stream file Second will be the loop typically unl
 ??? & 529 = Bede Encounter
 248 & 3332 = Zacian and Zamazenta first Encounter Battle Theme
 582 = Badge Get!
+136 = Chairman Rose's Theme
+??? & 1594 = Trainer Victory Theme
+2012 & ??? = Gym Trainer Encounter
+695 & ??? = Youngster Trainer Encounter
+891 & ??? = The Darkest Day
+??? & 2525 = Battle Tower Theme
+??? & 1860 = Hotel Theme
+1595 & ??? = Legends of Galar
+??? & 1916 = Train Station Theme

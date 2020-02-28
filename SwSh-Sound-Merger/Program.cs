@@ -61,7 +61,7 @@ namespace SwSh_Sound_Merger
                 }
                 Task.WaitAll(tasks.ToArray());
 
-                Console.WriteLine($"Coversion took {(startTime - DateTime.Now).ToString("mm':'ss")} minutes");
+                Console.WriteLine($"Coversion took {(startTime - DateTime.Now).ToString("mm':'ss")}");
                 Console.WriteLine("Succesfully merged and convertered all tracks!");
                 Console.Write("Press any key to continue!");
                 Console.ReadKey(true);
